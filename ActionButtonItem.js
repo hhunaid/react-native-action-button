@@ -146,7 +146,7 @@ export default class ActionButtonItem extends Component {
       spaceBetween
     } = this.props;
     const offsetTop = Math.max(size / 2 - TEXT_HEIGHT / 2, 0);
-    const positionStyles = { top: offsetTop };
+    const positionStyles = { top: 0 };
     const hideShadow = hideLabelShadow === undefined
       ? this.props.hideShadow
       : hideLabelShadow;
