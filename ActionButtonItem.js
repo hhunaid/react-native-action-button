@@ -34,7 +34,8 @@ export default class ActionButtonItem extends Component {
       useNativeFeedback: true,
       activeOpacity: DEFAULT_ACTIVE_OPACITY,
       fixNativeFeedbackRadius: false,
-      nativeFeedbackRippleColor: "rgba(255,255,255,0.75)"
+      nativeFeedbackRippleColor: "rgba(255,255,255,0.75)",
+      square: false
     };
   }
 
@@ -44,7 +45,8 @@ export default class ActionButtonItem extends Component {
       useNativeFeedback: PropTypes.bool,
       fixNativeFeedbackRadius: PropTypes.bool,
       nativeFeedbackRippleColor: PropTypes.string,
-      activeOpacity: PropTypes.number
+      activeOpacity: PropTypes.number,
+      square: PropTypes.bool
     };
   }
 
@@ -54,7 +56,8 @@ export default class ActionButtonItem extends Component {
       position,
       verticalOrientation,
       hideShadow,
-      spacing
+      spacing,
+      square
     } = this.props;
 
     if (!this.props.active) return null;
@@ -80,7 +83,7 @@ export default class ActionButtonItem extends Component {
       alignItems: "center",
       width: size,
       height: size,
-      borderRadius: size / 2,
+      borderRadius: square ? 0 : size / 2,
       backgroundColor: this.props.buttonColor || this.props.btnColor
     };
 
@@ -95,7 +98,7 @@ export default class ActionButtonItem extends Component {
           height: size,
           marginBottom: spacing,
           right: this.props.offsetX,
-          borderRadius: this.props.size / 2
+          borderRadius: this.props.square ? 0 : this.props.size / 2
         }
       : {
           paddingHorizontal: this.props.offsetX,
