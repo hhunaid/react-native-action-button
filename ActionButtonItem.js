@@ -121,8 +121,8 @@ export default class ActionButtonItem extends Component {
             onPress={this.props.onPress}
           >
             <View style={[
-              buttonStyle,
-              !hideShadow ? {...shadowStyle, ...this.props.shadowStyle} : null
+              !hideShadow ? {...shadowStyle, ...this.props.shadowStyle} : null,
+              buttonStyle
             ]}>
               {this.props.children}
             </View>

@@ -14,7 +14,8 @@ export const shadowStyle = {
   },
   shadowColor: "#000",
   shadowRadius: 3,
-  elevation: 5
+  elevation: 5,
+  backgroundColor: 'white'
 };
 
 export const alignItemsMap = {
