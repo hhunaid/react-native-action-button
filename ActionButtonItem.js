@@ -57,7 +57,9 @@ export default class ActionButtonItem extends Component {
       verticalOrientation,
       hideShadow,
       spacing,
-      square
+      square,
+      width,
+      height
     } = this.props;
 
     if (!this.props.active) return null;
@@ -81,8 +83,8 @@ export default class ActionButtonItem extends Component {
     const buttonStyle = {
       justifyContent: "center",
       alignItems: "center",
-      width: size,
-      height: size,
+      width: width ? width : size,
+      height: height ? height : size,
       borderRadius: square ? 0 : size / 2,
       backgroundColor: this.props.buttonColor || this.props.btnColor
     };
@@ -95,14 +97,14 @@ export default class ActionButtonItem extends Component {
     const parentStyle = isAndroid &&
       this.props.fixNativeFeedbackRadius
       ? {
-          height: size,
+          height: height ? height : size,
           marginBottom: spacing,
           right: this.props.offsetX,
           borderRadius: this.props.square ? 0 : this.props.size / 2
         }
       : {
           paddingHorizontal: this.props.offsetX,
-          height: size + SHADOW_SPACE + spacing
+          height: (height ? height : size) + SHADOW_SPACE + spacing
         };
     return (
       <Animated.View
